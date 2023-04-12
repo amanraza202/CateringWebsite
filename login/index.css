@@ -1,0 +1,245 @@
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+*{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* background: linear-gradient(to right ,#BD3F32, #CB356B); */
+    background: url(../icons/bg.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-box{
+    position:relative;
+    width: 768px;
+    height: 530px;
+    box-shadow: inset 0 0 125px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 40px;
+    transition: width 300ms ease;
+
+}
+.inner-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.inner-box:before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right , #fad77a, #f37335 );
+    clip-path: circle(50% at 10% 40%);
+    z-index: 1;
+    transition:500ms ease ;
+}
+.text-box{
+    position: absolute;
+    z-index:1;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 500ms ease;
+}
+.text-box .imgbox
+{
+    display: flex;
+    align-items: center;
+}
+
+.imgbox img{
+    position:relative;
+    width: 80px;
+    animation: bounce 2s ease infinite;
+}
+@keyframes bounce
+{
+    0%{transform: scale(1,1) translateY(0);}
+    10%{transform: scale(1.1,.9) translateY(0);}
+    30%{transform: scale(.9,1.1) translateY(-40px);}
+    50%{transform: scale(1.09,.95) translateY(0);}
+}
+.text-box .imgbox span
+{
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin: 0 10px;
+
+}
+.text-box p{
+    color: white;
+    font-size: 20px;
+}
+.login-form
+{
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%); 
+    
+}
+.login-form .input-box
+{
+    position: relative;
+    margin:20px 0;
+    right: 10px;
+}
+.login-form .input-box input
+{
+    border: 0;
+    background:#f3f3f3 ;
+    border-radius: 45px;
+    width: 100%;
+    padding:12px;
+    box-shadow: inset 0 0 6px #c4c4c4;
+    color: #656565;
+}
+.login-form .input-box input :focus
+{
+    outline: none;
+}
+.login-form .check-box
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding:0 12px ;
+}
+.login-form .check-box span
+{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    color: black;
+
+}
+.login-form .button-box
+{
+    position: relative;
+    margin: 40px 0;
+}
+.login-form .button-box a
+{
+ text-decoration: none;
+}
+.login-form .button-box button{
+    width: 100%;
+    border-radius: 50px;
+    outline: none;
+    background: linear-gradient(to right, yellow,red);
+    cursor: pointer;
+    border: 4px solid white;
+    box-shadow: 0 20px 30px -10px rgb(250, 103, 49) ;
+    padding: 10px;
+    color: white;
+}
+.login-form .button-box button:hover{
+    background: linear-gradient(to right , violet, blue);
+}
+.login-form .reg-box
+{
+position: relative;
+text-align: center;
+}
+.login-form .reg-box p{
+    font-size: 16px;
+}
+.login-form .reg-box p a{
+    display: inline-block;
+    text-decoration: none;
+    color: #BD3F32;
+}
+.login-form .reg-box p a:hover
+{
+color: #f37335;
+}
+.loader-container{
+    position: fixed;
+    top:0; left:0;
+    height:100%; 
+    width:100%;
+    z-index: 10000;
+    background:linear-gradient(to right , rgb(108, 108, 245) , cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img{
+    width:30rem;
+    border-radius: 50px;
+}
+
+.loader-container.fade-out{
+    top:-110%;
+    opacity:0;
+}
+@media(max-width:768px)
+{
+    .login-box
+    {
+        width: 600px;
+    }
+    .inner-box:before
+    {
+        width: 430px;
+        height: 430px;
+        clip-path: circle(50% at 10% 20% );
+    }
+    .text-box
+    {
+        left: 15px;
+        top: 50px;
+        transform: translateY(0);
+        transition: 500ms ease;
+    }
+}
+@media(max-width:600px)
+{
+    .login-box
+    {
+        padding: 15px;
+    }
+    .inner-box:before
+    {
+        width: 100%;
+        height: 100%;
+        clip-path:circle(50% at 50% -15% );;
+    }
+    .text-box
+    {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 40px;
+    }
+    .text-box .imgbox span ,
+    .text-box p
+    {
+        display: none;
+    }
+    .login-form
+    {
+         position: absolute;
+         top: 190px;
+         left: 50%;
+         transform: translateX(-50%);
+         padding: 12px;
+         width: 100%;
+    }
+}

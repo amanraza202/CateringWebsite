@@ -1,0 +1,256 @@
+*:before,
+*:after{
+    box-sizing: border-box;
+}
+*{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /* background: linear-gradient(to right ,#BD3F32, #CB356B); */
+    background:url(./img/bg.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-box{
+    position:relative;
+    width: 768px;
+    height: 530px;
+    box-shadow: inset 0 0 125px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 40px;
+    transition: width 300ms ease;
+
+}
+.inner-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.inner-box:before
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right , #fad77a, #f37335 );
+    clip-path: circle(50% at 10% 40%);
+    z-index: 1;
+    transition:500ms ease ;
+}
+.text-box{
+    position: absolute;
+    z-index:1;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 500ms ease;
+}
+.text-box .imgbox
+{
+    display: flex;
+    align-items: center;
+}
+
+.imgbox img{
+    position:relative;
+    width: 80px;
+    animation: bounce 2s ease infinite;
+}
+@keyframes bounce
+{
+    0%{transform: scale(1,1) translateY(0);}
+    10%{transform: scale(1.1,.9) translateY(0);}
+    30%{transform: scale(.9,1.1) translateY(-40px);}
+    50%{transform: scale(1.09,.95) translateY(0);}
+}
+.text-box .imgbox span
+{
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    margin: 0 10px;
+
+}
+.text-box p{
+    color: white;
+    font-size: 20px;
+}
+.signup-form
+{
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%); 
+    
+}
+.signup-form .input-box
+{
+    position: relative;
+    margin:20px 0;
+    right: 10px;
+}
+.signup-form .input-box input
+{
+    border: 0;
+    background:#f3f3f3 ;
+    border-radius: 45px;
+    width: 100%;
+    padding: 6px;
+    box-shadow: inset 0 0 6px #c4c4c4;
+    color: #656565;
+}
+.signup .input-box input :focus
+{
+    outline: none;
+}
+.signup .check-box
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding:0 12px ;
+}
+.signup-form .check-box span
+{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 12px;
+    color: black;
+
+}
+.signup-form .button-box
+{
+    position: relative;
+    margin: 40px 0;
+}
+.signup-form .button-box a
+{
+    text-decoration: none;
+}
+.signup-form .button-box button{
+    width: 100%;
+    border-radius: 50px;
+    outline: none;
+    background: linear-gradient(to right, yellow,red);
+    cursor: pointer;
+    border: 4px solid white;
+    box-shadow: 0 20px 30px -10px rgb(250, 103, 49) ;
+    padding: 10px;
+    color: white;
+}
+.signup-form .button-box button:hover{
+    background: linear-gradient(to right , violet, blue);
+}
+.signup-form .login-box
+{
+position: relative;
+text-align: center;
+text-decoration: none;
+}
+.signup-form .login-box p{
+    
+    font-size: 15px;
+    margin-bottom: 17px;
+}
+.signup-form .login-box a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #f37335;
+}
+.signup .login-box p a{
+    display: inline-block;
+    text-decoration: none;
+    color: #BD3F32;
+}
+.signup-form .login-box p a:hover
+{
+color: #08a4ff;
+}
+.loader-container{
+    /* background:url(./laoder.jpg); */
+    position: fixed;
+    top:0; left:0;
+    height:100%; 
+    width:100%;
+    z-index: 10000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img{
+    width:30rem;
+    border-radius: 50px;
+}
+
+.loader-container.fade-out{
+    top:-110%;
+    opacity:0;
+}
+
+@media(max-width:768px)
+{
+    .login-box
+    {
+        width: 250px;
+    }
+    .inner-box:before
+    {
+        width: 430px;
+        height: 530px;
+        clip-path: circle(50% at 10% 20% );
+    }
+    .text-box
+    {
+        left: 15px;
+        top: 50px;
+        transform: translateY(0);
+        transition: 500ms ease;
+    }
+    
+}
+@media(max-width:680px)
+{
+    .login-box
+    {
+        padding: 15px;
+    }
+    .inner-box:before
+    {
+        width: 100%;
+        height: 100%;
+        clip-path:circle(37% at 50% -15% );;
+    }
+    .text-box
+    {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 40px;
+    }
+    .text-box .imgbox span ,
+    .text-box p
+    {
+        display: none;
+    }
+    .signup-form
+    {
+         position: absolute;
+         top: 75px;
+         left: 50%;
+         transform: translateX(-50%);
+         padding: 12px;
+         width: 100%;
+    }
+}

@@ -1,0 +1,33 @@
+
+h1{
+    background-color: grey;
+    width: 15%;
+
+    
+}
+
+.gallary .box-container
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.gallary .box-container .box{
+    height: 25rem;
+    flex: 1 1 30rem;
+    border: 2px solid black;
+    box-shadow: 0.5rem 1rem lightblue;
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+.btn{
+    border: 2px solid black;
+    border-radius: 10px;
+    background: linear-gradient(to right , red,yellow);
+    text-decoration: none;
+    font-size: 23px;
+    margin: 2px;
+    padding: 4px;
+
+}
